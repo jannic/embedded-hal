@@ -70,6 +70,13 @@ impl Error for core::convert::Infallible {
     }
 }
 
+#[cfg(feature="void")]
+impl Error for void::Void {
+    fn kind(&self) -> ErrorKind {
+        match *self {}
+    }
+}
+
 /// SPI error kind
 ///
 /// This represents a common set of SPI operation errors. HAL implementations are

@@ -15,6 +15,11 @@ readme = "README.md"
 repository = "https://github.com/rust-embedded/embedded-hal"
 version = "1.0.0-alpha.6"
 
+[dependencies.void]
+default-features = false
+version = "1.0.2"
+optional = true
+
 [dependencies]
 nb = "1"
 

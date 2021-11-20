@@ -19,6 +19,13 @@ impl Error for core::convert::Infallible {
     }
 }
 
+#[cfg(feature="void")]
+impl Error for void::Void {
+    fn kind(&self) -> ErrorKind {
+        match *self {}
+    }
+}
+
 /// Serial error kind
 ///
 /// This represents a common set of serial operation errors. HAL implementations are

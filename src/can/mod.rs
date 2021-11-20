@@ -64,6 +64,13 @@ impl Error for core::convert::Infallible {
     }
 }
 
+#[cfg(feature="void")]
+impl Error for void::Void {
+    fn kind(&self) -> ErrorKind {
+        match *self {}
+    }
+}
+
 /// CAN error kind
 ///
 /// This represents a common set of CAN operation errors. HAL implementations are

@@ -113,6 +113,13 @@ impl Error for core::convert::Infallible {
     }
 }
 
+#[cfg(feature="void")]
+impl Error for void::Void {
+    fn kind(&self) -> ErrorKind {
+        match *self {}
+    }
+}
+
 /// I2C error kind
 ///
 /// This represents a common set of I2C operation errors. HAL implementations are
